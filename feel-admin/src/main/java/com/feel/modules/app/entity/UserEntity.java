@@ -1,119 +1,152 @@
-/**
- * Copyright 2018 人人开源 http://www.renren.io
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
-
 package com.feel.modules.app.entity;
 
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 
 import java.io.Serializable;
-import java.util.Date;
-
+import lombok.Data;
 
 /**
- * 用户
+ * 用户表
  *
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017-03-23 15:22:06
+ * @author zz
+ * @email
+ * @date 2019-06-13 02:39:52
  */
-@TableName("tb_user")
+
+@Data
+@TableName("db_user")
 public class UserEntity implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 用户ID
 	 */
-	@TableId
-	private Long userId;
+	private String userId;
 	/**
 	 * 用户名
 	 */
 	private String username;
 	/**
-	 * 手机号
-	 */
-	private String mobile;
-	/**
 	 * 密码
 	 */
 	private String password;
 	/**
+	 * 昵称
+	 */
+	private String nickName;
+	/**
+	 * 头像
+	 */
+	private String photo;
+	/**
+	 * 个人照片
+	 */
+	private String images;
+	/**
+	 * 微信openid
+	 */
+	private String openid;
+	/**
+	 * 省份
+	 */
+	private String province;
+	/**
+	 * 城市
+	 */
+	private String city;
+	/**
+	 * 手机号
+	 */
+	private String mobile;
+	/**
+	 * 真实姓名
+	 */
+	private String realName;
+	/**
+	 * 性别1.男 2.女 3.其他
+	 */
+	private Integer sex;
+	/**
+	 * 生日
+	 */
+	private String birthday;
+	/**
+	 * 星座 1 2 3
+	 */
+	private Integer zodiac;
+	/**
+	 * 身高
+	 */
+	private String height;
+	/**
+	 * 学历 1 2 3
+	 */
+	private Integer education;
+	/**
+	 * 毕业院校
+	 */
+	private String graduation;
+	/**
+	 * 行业/职业 1 2 3
+	 */
+	private Integer occupation;
+	/**
+	 * 收入 1 2 3
+	 */
+	private Integer lncome;
+	/**
+	 * 微信号
+	 */
+	private String wechat;
+	/**
+	 * 身份证
+	 */
+	private String idCard;
+	/**
+	 * 信誉分
+	 */
+	private String credit;
+	/**
+	 * 钱包
+	 */
+	private String payment;
+	/**
+	 * 人群类型 1单身  2 恋爱  3 已婚  4 离异 5.其他
+	 */
+	private Integer crowd;
+	/**
+	 * 关于我
+	 */
+	private String aboutme;
+	/**
+	 * 兴趣爱好
+	 */
+	private String hobby;
+	/**
+	 * 感情观
+	 */
+	private String emotion;
+	/**
+	 * 心仪的人
+	 */
+	private String admire;
+	/**
+	 * 账户类型  1.游客 2.会员 3.管理员
+	 */
+	private Integer accType;
+	/**
+	 * 账户状态  1.正常 2.冻结 3.封号
+	 */
+	private Integer accStatus;
+	/**
 	 * 创建时间
 	 */
-	private Date createTime;
+	private String createTime;
+	/**
+	 * 修改时间
+	 */
+	private String updateTime;
 
-	/**
-	 * 设置：用户ID
-	 */
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-	/**
-	 * 获取：用户ID
-	 */
-	public Long getUserId() {
-		return userId;
-	}
-	/**
-	 * 设置：用户名
-	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	/**
-	 * 获取：用户名
-	 */
-	public String getUsername() {
-		return username;
-	}
-	/**
-	 * 设置：手机号
-	 */
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-	/**
-	 * 获取：手机号
-	 */
-	public String getMobile() {
-		return mobile;
-	}
-	/**
-	 * 设置：密码
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	/**
-	 * 获取：密码
-	 */
-	public String getPassword() {
-		return password;
-	}
-	/**
-	 * 设置：创建时间
-	 */
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-	/**
-	 * 获取：创建时间
-	 */
-	public Date getCreateTime() {
-		return createTime;
-	}
 }

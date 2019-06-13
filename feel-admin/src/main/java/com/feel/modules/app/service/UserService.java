@@ -2,8 +2,11 @@ package com.feel.modules.app.service;
 
 
 import com.baomidou.mybatisplus.service.IService;
+import com.feel.common.utils.PageUtils;
 import com.feel.modules.app.entity.UserEntity;
 import com.feel.modules.app.form.LoginForm;
+
+import java.util.Map;
 
 /**
  * 用户
@@ -21,5 +24,8 @@ public interface UserService extends IService<UserEntity> {
 	 * @param form    登录表单
 	 * @return        返回用户ID
 	 */
-	long login(LoginForm form);
+	String login(LoginForm form);
+
+	PageUtils selectListPage(Map<String, Object> params);
+
 }

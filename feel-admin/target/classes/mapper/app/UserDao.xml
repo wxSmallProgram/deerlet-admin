@@ -3,5 +3,153 @@
 
 <mapper namespace="com.feel.modules.app.dao.UserDao">
 
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.feel.modules.app.entity.UserEntity" id="userMap">
+        <result property="userId" column="user_id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="photo" column="photo"/>
+        <result property="images" column="images"/>
+        <result property="openid" column="openid"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+        <result property="mobile" column="mobile"/>
+        <result property="realName" column="real_name"/>
+        <result property="sex" column="sex"/>
+        <result property="birthday" column="birthday"/>
+        <result property="zodiac" column="zodiac"/>
+        <result property="height" column="height"/>
+        <result property="education" column="education"/>
+        <result property="graduation" column="graduation"/>
+        <result property="occupation" column="occupation"/>
+        <result property="lncome" column="lncome"/>
+        <result property="wechat" column="wechat"/>
+        <result property="idCard" column="id_card"/>
+        <result property="credit" column="credit"/>
+        <result property="payment" column="payment"/>
+        <result property="crowd" column="crowd"/>
+        <result property="aboutme" column="aboutme"/>
+        <result property="hobby" column="hobby"/>
+        <result property="emotion" column="emotion"/>
+        <result property="admire" column="admire"/>
+        <result property="accType" column="acc_type"/>
+        <result property="accStatus" column="acc_status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+    <select id="selectListByMap" resultMap="userMap">
+        SELECT * FROM db_user
+        <where>
+                <if test="userId != null" >
+            user_id = #{userId} AND
+        </if>
+                <if test="username != null" >
+            username = #{username} AND
+        </if>
+                <if test="password != null" >
+            password = #{password} AND
+        </if>
+                <if test="nickName != null" >
+            nick_name = #{nickName} AND
+        </if>
+                <if test="photo != null" >
+            photo = #{photo} AND
+        </if>
+                <if test="images != null" >
+            images = #{images} AND
+        </if>
+                <if test="openid != null" >
+            openid = #{openid} AND
+        </if>
+                <if test="province != null" >
+            province = #{province} AND
+        </if>
+                <if test="city != null" >
+            city = #{city} AND
+        </if>
+                <if test="mobile != null" >
+            mobile = #{mobile} AND
+        </if>
+                <if test="realName != null" >
+            real_name = #{realName} AND
+        </if>
+                <if test="sex != null" >
+            sex = #{sex} AND
+        </if>
+                <if test="birthday != null" >
+            birthday = #{birthday} AND
+        </if>
+                <if test="zodiac != null" >
+            zodiac = #{zodiac} AND
+        </if>
+                <if test="height != null" >
+            height = #{height} AND
+        </if>
+                <if test="education != null" >
+            education = #{education} AND
+        </if>
+                <if test="graduation != null" >
+            graduation = #{graduation} AND
+        </if>
+                <if test="occupation != null" >
+            occupation = #{occupation} AND
+        </if>
+                <if test="lncome != null" >
+            lncome = #{lncome} AND
+        </if>
+                <if test="wechat != null" >
+            wechat = #{wechat} AND
+        </if>
+                <if test="idCard != null" >
+            id_card = #{idCard} AND
+        </if>
+                <if test="credit != null" >
+            credit = #{credit} AND
+        </if>
+                <if test="payment != null" >
+            payment = #{payment} AND
+        </if>
+                <if test="crowd != null" >
+            crowd = #{crowd} AND
+        </if>
+                <if test="aboutme != null" >
+            aboutme = #{aboutme} AND
+        </if>
+                <if test="hobby != null" >
+            hobby = #{hobby} AND
+        </if>
+                <if test="emotion != null" >
+            emotion = #{emotion} AND
+        </if>
+                <if test="admire != null" >
+            admire = #{admire} AND
+        </if>
+                <if test="accType != null" >
+            acc_type = #{accType} AND
+        </if>
+                <if test="accStatus != null" >
+            acc_status = #{accStatus} AND
+        </if>
+                <if test="createTime != null" >
+            create_time = #{createTime} AND
+        </if>
+                <if test="updateTime != null" >
+            update_time = #{updateTime} AND
+        </if>
+                1=1
+        </where>
+        ORDER BY create_time DESC
+        LIMIT #{offset},#{limit}
+    </select>
+
+
+    <select id="selectCounts" resultType="java.lang.Integer">
+        SELECT count(1) FROM db_user
+    </select>
+
+
 
 </mapper>

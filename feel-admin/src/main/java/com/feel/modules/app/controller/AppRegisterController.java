@@ -2,6 +2,8 @@ package com.feel.modules.app.controller;
 
 
 import com.feel.common.utils.R;
+import com.feel.common.utils.TimeUtils;
+import com.feel.common.utils.generate.IDGenerator;
 import com.feel.common.validator.ValidatorUtils;
 import com.feel.modules.app.entity.UserEntity;
 import com.feel.modules.app.form.RegisterForm;
@@ -37,10 +39,11 @@ public class AppRegisterController {
         ValidatorUtils.validateEntity(form);
 
         UserEntity user = new UserEntity();
+        user.setUserId(IDGenerator.SNOW_FLAKE.generate()+"");
         user.setMobile(form.getMobile());
         user.setUsername(form.getMobile());
         user.setPassword(DigestUtils.sha256Hex(form.getPassword()));
-        user.setCreateTime(new Date());
+        user.setCreateTime(TimeUtils.getNowTime());
         userService.insert(user);
 
         return R.ok();

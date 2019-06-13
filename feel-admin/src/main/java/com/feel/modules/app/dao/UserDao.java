@@ -20,6 +20,9 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.feel.modules.app.entity.UserEntity;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * 用户
  *
@@ -29,5 +32,9 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserDao extends BaseMapper<UserEntity> {
+
+    List<UserEntity> selectListByMap(Map<String, Object> param);
+
+    int selectCounts();
 
 }
